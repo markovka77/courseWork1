@@ -1,46 +1,29 @@
-import java.util.Arrays;
-
-import static java.lang.Float.MAX_VALUE;
-import static java.lang.Float.MIN_VALUE;
-
 public class Main {
-    static Employee[] employee = new Employee[6];
+    static Employee[] employee = new Employee[10];
 
     public static void main(String[] args) {
 
         employee[0] = new Employee("Andy Warhol", 1, 800);
         employee[1] = new Employee("Jean-Michel Basquiat", 1, 750);
-        employee[2] = new Employee("Kurt Cobain", 2, 500);
-        employee[3] = new Employee("Jared Leto", 2, 900);
+        employee[2] = new Employee("Kurt Cobain", 2, 670);
+        employee[3] = new Employee("Jared Leto", 2, 850);
         employee[4] = new Employee("Johnny Depp", 3, 950);
         employee[5] = new Employee("Angelina Jolie", 3, 600);
+        employee[6] = new Employee("Mike Tyson", 4, 1000);
+        employee[7] = new Employee("Muhammed Ali", 4, 1200);
+        employee[8] = new Employee("Lionel Messi", 5, 870);
+        employee[9] = new Employee("Kylian Mbappe", 5, 990);
+
+
         printAllData();
-        calcPrintTotalSalary();
-        minExpenses();
+        totalSalary();
+        printMaxSalary();
+        printMinSalary();
+        printAverages();
 
 
     }
 
-    public static void minExpenses() {
-        for (float i =0; i< employee.length-1;i++) {
-            while (Employee.salary>i) {
-                if(Employee.salary<i){
-                    break;
-                }
-            }
-            System.out.println(i);
-
-        }
-
-    }
-
-
-    public static void calcPrintTotalSalary() {
-        float sum = 0;
-        for (Employee i : employee)
-            sum += i.salary;
-        System.out.println(sum);
-    }
 
 
     public static void printAllData() {
@@ -48,6 +31,57 @@ public class Main {
             System.out.println(employee[i].toString());
         }
     }
+
+    public static void totalSalary(){
+        float total = 0;
+        for (Employee value : employee) {
+            total += value.getSalary();
+
+        }
+        System.out.println(total);
+    }
+
+
+    public static void printMaxSalary(){
+        float max = 0;
+        for(Employee value:employee){
+            if (max< value.getSalary()){
+                max= value.getSalary();
+            }
+
+        }
+        System.out.println(max);
+    }
+
+    public static void printMinSalary(){
+        float min= Float.MAX_VALUE;
+        for(Employee value: employee){
+            if (min>value.getSalary()){
+                min= value.getSalary();
+            }
+        }
+        System.out.println(min);
+    }
+
+    public static void printAverages(){
+        float total = 0;
+        float averages;
+        for (Employee value : employee) {
+            total += value.getSalary();
+
+        }
+        averages=total/employee.length;
+        System.out.println(averages);
+    }
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -2,16 +2,16 @@
 
 public class Employee {
 
-    String fullName;
-    int department;
-    static float salary;
-    int id;
+    private final String fullName;
+    private int department;
+    private float salary;
+    private int id;
     static int count=0;
 
     public Employee (String fullName,int department,float salary){
         this.fullName=fullName;
         this.department=department;
-        this.salary=salary;
+        this.salary =salary;
         count++;
         this.id=count;
 
@@ -25,8 +25,8 @@ public class Employee {
         return department;
     }
 
-    public float getSalary(float salary) {
-        return this.salary;
+    public float getSalary() {
+        return salary;
     }
 
     public int getId() {
@@ -37,8 +37,7 @@ public class Employee {
         this.department = department;
     }
 
-    public void setSalary(float salary) {
-        this.salary = salary;
+    public void setSalary(float salary) {this.salary = salary;
     }
 
     @Override
