@@ -20,10 +20,10 @@ public class Main {
         printMaxSalary();
         printMinSalary();
         printAverages();
+        printFullName();
 
 
     }
-
 
 
     public static void printAllData() {
@@ -32,52 +32,53 @@ public class Main {
         }
     }
 
-    public static void totalSalary(){
+    public static void totalSalary() {
         float total = 0;
         for (Employee value : employee) {
             total += value.getSalary();
 
         }
-        System.out.println(total);
+        System.out.println(" Общие затраты на зарплаты в месяц составляет: " + total);
     }
 
 
-    public static void printMaxSalary(){
+    public static void printMaxSalary() {
         float max = 0;
-        for(Employee value:employee){
-            if (max< value.getSalary()){
-                max= value.getSalary();
+        for (Employee value : employee) {
+            if (max < value.getSalary()) {
+                max = value.getSalary();
             }
 
         }
         System.out.println(max);
     }
 
-    public static void printMinSalary(){
-        float min= Float.MAX_VALUE;
-        for(Employee value: employee){
-            if (min>value.getSalary()){
-                min= value.getSalary();
+    public static void printMinSalary() {
+        float min = Float.MAX_VALUE;
+        for (Employee value : employee) {
+            if (min > value.getSalary()) {
+                min = value.getSalary();
             }
         }
         System.out.println(min);
     }
 
-    public static void printAverages(){
+    public static void printAverages() {
         float total = 0;
         float averages;
         for (Employee value : employee) {
             total += value.getSalary();
 
         }
-        averages=total/employee.length;
-        System.out.println(averages);
+        averages = total / employee.length;
+        System.out.println("Средняя запрлата всех сотрудников: " + averages);
     }
 
-
-
-
-
+    public static void printFullName(){
+        for (Employee value:employee) {
+            System.out.println(value.getFullName());
+        }
+    }
 
 
 
