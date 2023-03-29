@@ -17,13 +17,14 @@ public class Main {
         employee[9] = new Employee("Kylian Mbappe", 5, 990);
 
 
-        printAllData();
         totalSalary();
         printMaxSalary();
         printMinSalary();
         printAverages();
         printFullName();
+        printAllData();
 
+        idexing();
 
     }
 
@@ -84,6 +85,16 @@ public class Main {
         for (Employee value:employee) {
             System.out.println(value.getFullName());
         }
+    }
+
+    public static void idexing(){
+        for (int i = 0; i < employee.length; i++) {
+            float index = 10;
+            float procent= employee[i].getSalary()/100;
+            float indexing = procent*index;
+            employee[i].setSalary(indexing+employee[i].getSalary());
+        }
+
     }
 
 }
