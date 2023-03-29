@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     static Employee[] employee = new Employee[10];
 
@@ -38,29 +40,33 @@ public class Main {
             total += value.getSalary();
 
         }
-        System.out.println(" Общие затраты на зарплаты в месяц составляет: " + total);
+        System.out.println("Общие затраты на зарплаты в месяц составляет: " + total);
     }
 
 
     public static void printMaxSalary() {
         float max = 0;
+        String nameEmpolee = null;
         for (Employee value : employee) {
             if (max < value.getSalary()) {
                 max = value.getSalary();
+                nameEmpolee = value.getFullName();
             }
 
         }
-        System.out.println(max);
+        System.out.println("Максимальная зп у "+ nameEmpolee+" : "+max);
     }
 
     public static void printMinSalary() {
         float min = Float.MAX_VALUE;
+        String nameEmpolee = null;
         for (Employee value : employee) {
             if (min > value.getSalary()) {
                 min = value.getSalary();
+                nameEmpolee = value.getFullName();
             }
         }
-        System.out.println(min);
+        System.out.println("Минимальная зп у " + nameEmpolee +" : "+ min);
     }
 
     public static void printAverages() {
@@ -79,10 +85,5 @@ public class Main {
             System.out.println(value.getFullName());
         }
     }
-
-
-
-
-
 
 }
