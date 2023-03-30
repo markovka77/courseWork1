@@ -4,11 +4,11 @@ public class Employee {
 
     private final String fullName;
     private int department;
-    private float salary;
+    private int salary;
     private int id;
     static int count=0;
 
-    public Employee (String fullName,int department,float salary){
+    public Employee (String fullName,int department,int salary){
         this.fullName=fullName;
         this.department=department;
         this.salary =salary;
@@ -37,7 +37,7 @@ public class Employee {
         this.department = department;
     }
 
-    public void setSalary(float salary) {this.salary = salary;
+    public void setSalary(float salary) {this.salary = (int) salary;
     }
 
     @Override

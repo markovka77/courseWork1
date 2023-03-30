@@ -15,7 +15,7 @@ public class Main {
         employee[7] = new Employee("Muhammed Ali", 4, 1200);
         employee[8] = new Employee("Lionel Messi", 5, 870);
         employee[9] = new Employee("Kylian Mbappe", 5, 990);
-
+        //employee[4]=null;
 
         totalSalary();
         printMaxSalary();
@@ -23,14 +23,21 @@ public class Main {
         printAverages();
         printFullName();
         printAllData();
+        System.out.println();
 
-        idexing();
+        printIdexingSalary();
 
     }
 
 
+
+
     public static void printAllData() {
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < employee.length; i++) {
+            if(employee[i] == null){
+                continue;
+            }
+
             System.out.println(employee[i].toString());
         }
     }
@@ -38,7 +45,10 @@ public class Main {
     public static void totalSalary() {
         float total = 0;
         for (Employee value : employee) {
-            total += value.getSalary();
+            if(value == null){
+                continue;
+            }
+                total += value.getSalary();
 
         }
         System.out.println("Общие затраты на зарплаты в месяц составляет: " + total);
@@ -46,11 +56,14 @@ public class Main {
 
 
     public static void printMaxSalary() {
-        float max = 0;
+        int max = 0;
         String nameEmpolee = null;
         for (Employee value : employee) {
+            if(value == null){
+                continue;
+            }
             if (max < value.getSalary()) {
-                max = value.getSalary();
+                max = (int) value.getSalary();
                 nameEmpolee = value.getFullName();
             }
 
@@ -62,6 +75,9 @@ public class Main {
         float min = Float.MAX_VALUE;
         String nameEmpolee = null;
         for (Employee value : employee) {
+            if(value == null){
+                continue;
+            }
             if (min > value.getSalary()) {
                 min = value.getSalary();
                 nameEmpolee = value.getFullName();
@@ -74,6 +90,9 @@ public class Main {
         float total = 0;
         float averages;
         for (Employee value : employee) {
+            if(value == null){
+                continue;
+            }
             total += value.getSalary();
 
         }
@@ -83,16 +102,21 @@ public class Main {
 
     public static void printFullName(){
         for (Employee value:employee) {
+            if(value == null) continue;
             System.out.println(value.getFullName());
         }
     }
 
-    public static void idexing(){
+    public static void printIdexingSalary(){
         for (int i = 0; i < employee.length; i++) {
+            if(employee[i] == null){
+                continue;
+            }
             float index = 10;
             float procent= employee[i].getSalary()/100;
             float indexing = procent*index;
             employee[i].setSalary(indexing+employee[i].getSalary());
+            System.out.println(employee[i]+ ":" + employee[i].getSalary());
         }
 
     }
