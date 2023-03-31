@@ -4,9 +4,9 @@ public class Employee {
 
     private final String fullName;
     private int department;
-    private int salary;
+    private float salary;
     private int id;
-    static int count=0;
+    public static int count=0;
 
     public Employee (String fullName,int department,int salary){
         this.fullName=fullName;
