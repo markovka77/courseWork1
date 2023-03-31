@@ -16,26 +16,25 @@ public class Main {
         employee[8] = new Employee("Lionel Messi", 5, 870);
         employee[9] = new Employee("Kylian Mbappe", 5, 990);
 
-//        employee[4]=null;
-//        employee[5]=null;
-//        employee[6]=null;
-//        employee[7]=null;
-//        employee[8]=null;
-//        employee[9]=null;
-//        employee[3]=null;
 
         totalSalary();
         System.out.println();
+
         printMaxSalary();
         System.out.println();
+
         printMinSalary();
         System.out.println();
+
         printAverages();
         System.out.println();
+
         printFullName();
         System.out.println();
+
         printAllData();
         System.out.println();
+
         printIdexingSalary();
 
     }
@@ -52,7 +51,7 @@ public class Main {
     }
 
     public static void totalSalary() {
-        float total = 0;
+        int total = 0;
         for (Employee value : employee) {
             if (value == null) {
                 continue;
@@ -81,14 +80,14 @@ public class Main {
     }
 
     public static void printMinSalary() {
-        float min = Float.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
         String nameEmpolee = null;
         for (Employee value : employee) {
             if (value == null) {
                 continue;
             }
             if (min > value.getSalary()) {
-                min = value.getSalary();
+                min = (int) value.getSalary();
                 nameEmpolee = value.getFullName();
             }
         }
@@ -96,8 +95,8 @@ public class Main {
     }
 
     public static void printAverages() {
-        float total = 0;
-        float averages;
+        int total = 0;
+        int averages;
         for (Employee value : employee) {
             if (value == null) {
                 Employee.count--;
