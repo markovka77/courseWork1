@@ -16,6 +16,13 @@ public class Main {
         employee[8] = new Employee("Lionel Messi", 5, 870);
         employee[9] = new Employee("Kylian Mbappe", 5, 990);
 
+//        employee[9] = null;
+//        employee[8] = null;
+//        employee[7] = null;
+//        employee[6] = null;
+//        employee[5] = null;
+//        employee[4] = null;
+
 
         totalSalary();
         System.out.println();
@@ -106,6 +113,7 @@ public class Main {
 
         }
         averages = total / Employee.count;
+        //System.out.println(Employee.count);
         System.out.println("Средняя запрлата всех сотрудников: " + averages);
     }
 
