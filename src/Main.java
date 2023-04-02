@@ -16,13 +16,6 @@ public class Main {
         employee[8] = new Employee("Lionel Messi", 5, 870);
         employee[9] = new Employee("Kylian Mbappe", 5, 990);
 
-//        employee[9] = null;
-//        employee[8] = null;
-//        employee[7] = null;
-//        employee[6] = null;
-//        employee[5] = null;
-//        employee[4] = null;
-
 
         totalSalary();
         System.out.println();
@@ -102,18 +95,18 @@ public class Main {
     }
 
     public static void printAverages() {
-        int total = 0;
-        int averages;
+        float total = 0;
+        float averages;
+        float tmp = employee.length;
         for (Employee value : employee) {
             if (value == null) {
-                Employee.count--;
+                tmp--;
                 continue;
             }
             total += value.getSalary();
 
         }
-        averages = total / Employee.count;
-        //System.out.println(Employee.count);
+        averages = total / tmp;
         System.out.println("Средняя запрлата всех сотрудников: " + averages);
     }
 
